@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Exit on errors
+set -e
+
+# Navigate to the source code
+cd /usr/src/pam-bluetooth
+
+# Compile the PAM module
+gcc -fPIC -fno-stack-protector -c pam_bluetooth.c
+ld -x --shared -o /usr/lib/security/pam_bluetooth.so pam_bluetooth.o
+
+# Create configuration file for authorized devices
+touch /etc/security/authorized_bluetooth.conf
+chmod 644 /etc/security/authorized_bluetooth.conf
