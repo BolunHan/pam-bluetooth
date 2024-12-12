@@ -1,0 +1,8 @@
+Package: pam-bluetooth
+Version: 1.0
+Section: admin
+Priority: optional
+Architecture: amd64
+Depends: gcc, libpam0g-dev
+Maintainer: Bolun Han <Bolun.Han@outlook.com>
+Description: PAM Bluetooth authentication module This package installs and configures the PAM module for Bluetooth-based authentication.
